@@ -1,0 +1,21 @@
+version: '3'
+services:
+  app:
+    build: .
+    ports:
+    - "3000:3000"
+    volumes:
+    - .:/app
+    depends_on:
+    - redis
+    environment:
+    - DEBUG=True
+    - REDIS_HOST=redis
+    - REDIS_PASSWORD=onlyfordevelopment
+    - REDIS_PORT=6379
+    - BIND_PORT=3000
+  redis:
+    image: 'redis:6-alpine'
+    command: redis-server --requirepass onlyfordevelopment
+    ports:
+    - '6379:6379'
