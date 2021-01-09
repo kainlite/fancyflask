@@ -29,7 +29,6 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags:
           tags: |
             kainlite/fancyflask:${{ github.ref }}
             kainlite/fancyflask:latest
