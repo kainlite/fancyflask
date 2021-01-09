@@ -30,7 +30,7 @@ jobs:
         with:
           push: true
           tags: |
-            kainlite/fancyflask:${{ github.ref }}
+            kainlite/fancyflask:${{ github.sha }}
             kainlite/fancyflask:latest
       -
         name: Image digest
