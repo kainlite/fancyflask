@@ -9,6 +9,7 @@ readiness probe endpoint as well.
 For this to work you need to install:
 * [docker](https://www.docker.com/)
 * [docker-compose](https://docs.docker.com/compose/)
+
 Instructions vary depending the distribution and operative system, so follow the recommendations by your vendor.
 
 ### Local development with docker and docker-compose
@@ -70,12 +71,13 @@ To be able to run in kubernetes there is an additional prerequisite, you will ne
 * [sops](https://github.com/mozilla/sops)
 * [helm](https://helm.sh/docs/intro/install/)
 * [helm-secrets](https://github.com/jkroepke/helm-secrets#sops)
+
 Instructions vary depending the distribution and operative system, so follow the recommendations by your vendor.
 
 ### Creating and updating secrets
 We are going to use an already generated PGP key to create the secrets and I will commit these to the repository so anyone can encrypt/decrypt/test/play.
 
-Disclaimer: NEVER DO THIS! Instead use a KMS service from your cloud provide or host your own solution with something
+**Disclaimer**: NEVER DO THIS! Instead use a KMS service from your cloud provider or host your own solution with something
 like [Hashicorp Vault](https://www.hashicorp.com/resources/how-vault-compare-cloud-kms)
 
 Import the PGP key:
