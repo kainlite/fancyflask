@@ -68,6 +68,8 @@ the [kubernetes convention](https://kubernetes.io/docs/reference/using-api/healt
 To be able to run in kubernetes there is an additional prerequisite, you will need to either install:
 * [minikube](https://minikube.sigs.k8s.io/docs/start/)
 * [kind](https://kind.sigs.k8s.io/)
+
+To be able to deploy you will need:
 * [sops](https://github.com/mozilla/sops)
 * [helm](https://helm.sh/docs/intro/install/)
 * [helm-secrets](https://github.com/jkroepke/helm-secrets#sops)
@@ -147,6 +149,8 @@ docker push my.local.registry/fancyflask:latest
 ```
 The recommended path would be to install a docker registry in the location and use that from the air-gapped environment, for example [portus](http://port.us.org/),
 this minimal recommendation assumes that there is already a cluster working and potentially a registry to load the images to.
+
+Note: since the application depends on redis the same steps would be needed to pull that image as well, etc and any other dependency that could be added in the future.
 
 ## Monitoring
 Something nice to have would be instrumentation for [prometheus](https://github.com/prometheus/client_python), that way we can store, track and analize metrics later with grafana, it could also be handy to ship logs to an EFK cluster, or use something like datadog or newrelic which already supports all that.
